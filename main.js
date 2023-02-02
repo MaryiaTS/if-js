@@ -1,50 +1,28 @@
-//Working with variables
-let user = "John Doe";
-console.log(user);
-const student = "Mariya Tsimashkova";
-console.log(student);
-user = student;
-//expected output: "Mariya Tsimashkova"
-console.log(user);
+//Напишите функцию sum, которая возвращает сумму чисел
+function sum(a) {
+  function plus(b) {
+    return (a += b);
+  }
 
-//Working with primitives
-let test = 1;
-test++;
-test += "1";
-//expected output: "21"
-console.log(test);
-test -= 1;
-//expected output: "20"
-console.log(test);
-test = Boolean(test);
-//expected output: "true"
-console.log(test);
-
-// Working with Arrays
-//1st task
-let result1 = 1;
-const array1 = [2, 3, 5, 8];
-
-for (let i = 0; i < array1.length; i++) {
-  result1 *= array1[i];
+  return plus;
 }
 
-console.log(result1);
+console.log(sum(5)(2)); // 7
 
-//2nd task
-const array2 = [2, 5, 8, 15, 0, 6, 20, 3];
+//Покрасьте абзацы по клику (событие click)
+const i = [];
+const element = [];
+const colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
 
-for (let i = 0; i < array2.length; i++) {
-  if (array2[i] > 5 && array2[i] < 10) {
-    console.log(array2[i]);
-  }
-}
-
-//3rd task
-const array3 = [2, 5, 8, 15, 0, 6, 20, 3];
-
-for (let i = 0; i < array3.length; i++) {
-  if (array3[i] % 2 === 0) {
-    console.log(array3[i]);
-  }
+for (let a = 1; a <= 3; a++) {
+  i[a] = 0
+  element[a] = document.getElementById("text" + a);
+  console.log(element[a]);
+  element[a].addEventListener("click", function () {
+    i[a]++;
+    if (i[a]>colors.length) {
+      i[a] = 0;
+    }
+    document.getElementById("text"+a).style.color = colors[i[a]];
+  });
 }
