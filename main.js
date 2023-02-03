@@ -75,11 +75,11 @@ function replaceZero(array) {
       newArray[i] = "1zerozero";
     }
   }
-  console.log(newArray);
+  return newArray;
 }
 
-const array1 = [12, 53, 20, 18, 22, 100, 43, 57, 50, 1];//[12, 53, '2zero', 18, 22, '1zerozero', 43, 57, '5zero', 1]
-replaceZero(array1);
+const array1 = [12, 53, 20, 18, 22, 100, 43, 57, 50, 1];
+console.log(replaceZero(array1));//[12, 53, '2zero', 18, 22, '1zerozero', 43, 57, '5zero', 1]
 
-const array2 = [16, 38, 50, 0, 15, 97, 56, 30, 99, 90];//[16, 38, '5zero', 'zero', 15, 97, 56, '3zero', 99, '9zero']
-replaceZero(array2);
+const array2 = [16, 38, 50, 0, 15, 97, 56, 30, 99, 90];
+console.log(replaceZero(array2));//[16, 38, '5zero', 'zero', 15, 97, 56, '3zero', 99, '9zero']
