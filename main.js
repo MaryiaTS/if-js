@@ -1,28 +1,206 @@
-//Напишите функцию sum, которая возвращает сумму чисел
-function sum(a) {
-  function plus(b) {
-    return (a += b);
-  }
+// Функция palindrome
+const palindrome = (word) => word.split("").reverse().join("") === word;
 
-  return plus;
+const w1 = "оборка";
+console.log(palindrome(w1)); //false
+
+const w2 = "шалаш";
+console.log(palindrome(w2)); //true
+
+//Поиск объектов размещения:
+const hotels = [
+  {
+    name: "Hotel Leopold",
+    city: "Saint Petersburg",
+    country: "Russia",
+  },
+  {
+    name: "Apartment Sunshine",
+    city: "Santa Cruz de Tenerife",
+    country: "Spain",
+  },
+  {
+    name: "Villa Kunerad",
+    city: "Vysokie Tatry",
+    country: "Slowakia",
+  },
+  {
+    name: "Hostel Friendship",
+    city: "Berlin",
+    country: "Germany",
+  },
+  {
+    name: "Radisson Blu Hotel",
+    city: "Kyiv",
+    country: "Ukraine",
+  },
+  {
+    name: "Paradise Hotel",
+    city: "Guadalupe",
+    country: "Mexico",
+  },
+  {
+    name: "Hotel Grindewald",
+    city: "Interlaken",
+    country: "Switzerland",
+  },
+  {
+    name: "The Andaman Resort",
+    city: "Port Dickson",
+    country: "Malaysia",
+  },
+  {
+    name: "Virgin Hotel",
+    city: "Chicago",
+    country: "USA",
+  },
+  {
+    name: "Grand Beach Resort",
+    city: "Dubai",
+    country: "United Arab Emirates",
+  },
+  {
+    name: "Shilla Stay",
+    city: "Seoul",
+    country: "South Korea",
+  },
+  {
+    name: "San Firenze Suites",
+    city: "Florence",
+    country: "Italy",
+  },
+  {
+    name: "The Andaman Resort",
+    city: "Port Dickson",
+    country: "Malaysia",
+  },
+  {
+    name: "Black Penny Villas",
+    city: "BTDC, Nuca Dua",
+    country: "Indonesia",
+  },
+  {
+    name: "Koko Hotel",
+    city: "Tokyo",
+    country: "Japan",
+  },
+  {
+    name: "Ramada Plaza",
+    city: "Istanbul",
+    country: "Turkey",
+  },
+  {
+    name: "Waikiki Resort Hotel",
+    city: "Hawaii",
+    country: "USA",
+  },
+  {
+    name: "Puro Hotel",
+    city: "Krakow",
+    country: "Poland",
+  },
+  {
+    name: "Asma Suites",
+    city: "Santorini",
+    country: "Greece",
+  },
+  {
+    name: "Cityden Apartments",
+    city: "Amsterdam",
+    country: "Netherlands",
+  },
+  {
+    name: "Mandarin Oriental",
+    city: "Miami",
+    country: "USA",
+  },
+  {
+    name: "Concept Terrace Hotel",
+    city: "Rome",
+    country: "Italy",
+  },
+  {
+    name: "Ponta Mar Hotel",
+    city: "Fortaleza",
+    country: "Brazil",
+  },
+  {
+    name: "Four Seasons Hotel",
+    city: "Sydney",
+    country: "Australia",
+  },
+  {
+    name: "Le Meridien",
+    city: "Nice",
+    country: "France",
+  },
+  {
+    name: "Apart Neptun",
+    city: "Gdansk",
+    country: "Poland",
+  },
+  {
+    name: "Lux Isla",
+    city: "Ibiza",
+    country: "Spain",
+  },
+  {
+    name: "Nox Hostel",
+    city: "London",
+    country: "UK",
+  },
+  {
+    name: "Leonardo Vienna",
+    city: "Vienna",
+    country: "Austria",
+  },
+  {
+    name: "Adagio Aparthotel",
+    city: "Edinburgh",
+    country: "UK",
+  },
+  {
+    name: "Steigenberger Hotel",
+    city: "Hamburg",
+    country: "Germany",
+  },
+];
+
+function searchData(value) {
+  return hotels
+    .filter(function (hotel) {
+      if (
+        hotel.country === value ||
+        hotel.city === value ||
+        hotel.name === value
+      ) {
+        return [hotel.country, hotel.city, hotel.name];
+      }
+    })
+    .map(function (arr) {
+      console.log([arr.country, arr.city, arr.name].join(", "));
+    });
 }
 
-console.log(sum(5)(2)); // 7
+searchData("Germany");
+searchData("Istanbul");
+searchData("Italy");
 
-//Покрасьте абзацы по клику (событие click)
-const i = [];
-const element = [];
-const colors = ["magenta", "cyan", "firebrick", "springgreen", "skyblue"];
-
-for (let a = 1; a <= 3; a++) {
-  i[a] = colors.length + 1;
-  element[a] = document.getElementById("text" + a);
-  console.log(element[a]);
-  element[a].addEventListener("click", function () {
-    i[a]++;
-    if (i[a] >= colors.length) {
-      i[a] = 0;
-    }
-    document.getElementById("text" + a).style.color = colors[i[a]];
+function findCountries() {
+  const countriesList = hotels.map(function (arr) {
+    return arr.country;
   });
+  const countriesListUnique = countriesList.reduce((acc, item) => {
+    if (acc.includes(item)) {
+      return acc;
+    }
+    return [...acc, item];
+  }, []);
+  const result = hotels.map(function (value) {
+    if (countriesListUnique.value === hotels.country) {
+    }
+  });
+  return result;
 }
+
+console.log(findCountries());
